@@ -1,7 +1,9 @@
 ﻿#include <iostream>
 #include <stdexcept>
 #include <string>
+#include <cstdlib>
 #include "color.h"
+#include "command.h"
 
 using namespace std;
 
@@ -15,17 +17,15 @@ int InputParseInt(string inputText) {
             cout << inputText;
             getline(cin, input);
 
-            int num = stoi(input);
+            if (SpecialCommand(input)) continue;
 
-            if (!isdigit(num))
-                throw exception("Sai nhap lieu");
-
-            return num;
+            return stoi(input);
         }
         catch (const exception&) {
             SetConsoleColor(Red);
             cout << "Nhap du lieu khong phu hop!!! Vui long nhap lai" << endl;
             SetConsoleColor(White);
+
             continue;
         }
     }
@@ -81,6 +81,7 @@ void HePhuongTrinhHaiAn() {
 
 int main() {
     int chon = -1, cont = -1;
+
     while (true) {
         cout << "GIAI PHUONG TRINH" << endl;
         cout << "--------------------------------------------------" << endl;
@@ -93,24 +94,16 @@ int main() {
             HePhuongTrinhHaiAn();
         }
         else if (chon == 3) {
-            break;
-        }
-        else {
-            continue;
+            return 0;
         }
 
 
         do {
             cont = InputParseInt("1. Tiep tuc | 2. Ket thuc\n");
-        } while (cont != 1 && cont != 2);
 
-        if (cont == 1) {
-            continue;
-        }
-        else if (cont == 2) {
-            break;
-        }
+            if (cont == 2) {
+                return 0;
+            }
+        } while (cont != 1 && cont != 2);
     }
-    
-    return 0;
 }

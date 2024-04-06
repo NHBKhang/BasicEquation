@@ -1,4 +1,4 @@
 ﻿  main.cpp
-C:\Users\KHANG\Desktop\BasicEquation\Equation\main.cpp(37,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 C:\Users\KHANG\Desktop\BasicEquation\Equation\main.cpp(38,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\KHANG\Desktop\BasicEquation\Equation\main.cpp(39,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   Equation.vcxproj -> C:\Users\KHANG\Desktop\BasicEquation\Equation\Debug\Equation.exe
