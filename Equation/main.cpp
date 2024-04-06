@@ -1,15 +1,42 @@
 ﻿#include <iostream>
 #include <stdexcept>
 #include <string>
+#include "color.h"
+
 using namespace std;
+
+
+int InputParseInt(string inputText) {
+    string input;
+
+    while (true)
+    {
+        try {
+            cout << inputText;
+            getline(cin, input);
+
+            int num = stoi(input);
+
+            if (!isdigit(num))
+                throw exception("Sai nhap lieu");
+
+            return num;
+        }
+        catch (const exception&) {
+            SetConsoleColor(Red);
+            cout << "Nhap du lieu khong phu hop!!! Vui long nhap lai" << endl;
+            SetConsoleColor(White);
+            continue;
+        }
+    }
+}
+
 
 void PhuongTrinhBacNhat() {
     float a, b;
 
-    cout << "Nhap he so a: ";
-    cin >> a;
-    cout << "Nhap he so b: ";
-    cin >> b;
+    a = InputParseInt("Nhap he so a: ");
+    b = InputParseInt("Nhap he so b: ");
 
     if (a == 0) {
         if (b == 0) {
@@ -52,26 +79,20 @@ void HePhuongTrinhHaiAn() {
     cout << "y = " << y << endl;
 }
 
-int main() 
-{
+int main() {
     int chon = -1, cont = -1;
-    while (true) 
-    {
+    while (true) {
         cout << "GIAI PHUONG TRINH" << endl;
         cout << "--------------------------------------------------" << endl;
-        cout << "1. Phuong trinh | 2. He phuong trinh | 3. Ket thuc" << endl;
-        cin >> chon;
-            
-        if (chon == 1) 
-        {
+        chon = InputParseInt("1. Phuong trinh | 2. He phuong trinh | 3. Ket thuc\n");
+
+        if (chon == 1) {
             PhuongTrinhBacNhat();
         }
-        else if (chon == 2)
-        {
+        else if (chon == 2) {
             HePhuongTrinhHaiAn();
         }
-        else if (chon == 3)
-        {
+        else if (chon == 3) {
             break;
         }
         else {
@@ -79,18 +100,14 @@ int main()
         }
 
 
-        do
-        {
-            cout << "1. Tiep tuc | 2. Ket thuc" << endl;
-            cin >> cont;
+        do {
+            cont = InputParseInt("1. Tiep tuc | 2. Ket thuc\n");
         } while (cont != 1 && cont != 2);
 
-        if (cont == 1)
-        {
+        if (cont == 1) {
             continue;
         }
-        else if (cont == 2)
-        {
+        else if (cont == 2) {
             break;
         }
     }
