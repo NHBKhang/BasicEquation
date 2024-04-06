@@ -1,5 +1,4 @@
 #include "color.h"
-#include <windows.h>
 
 // Function definition to set console text color
 void SetConsoleColor(ConsoleColor color) {

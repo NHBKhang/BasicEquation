@@ -1,6 +1,8 @@
 #ifndef COLOR_H
 #define COLOR_H
 
+#include <windows.h>
+
 // Define ConsoleColor enum
 enum ConsoleColor {
     Black = 0,

@@ -2,6 +2,9 @@
 #define COMMAND_H
 
 #include <string>
+#include <iostream>
+#include "format.h"
+#include "utils.h"
 
 using namespace std;
 

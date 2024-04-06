@@ -141,13 +141,17 @@
   <ItemGroup>
     <ClCompile Include="color.cpp" />
     <ClCompile Include="command.cpp" />
+    <ClCompile Include="equation.cpp" />
     <ClCompile Include="format.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="color.h" />
     <ClInclude Include="command.h" />
+    <ClInclude Include="equation.h" />
     <ClInclude Include="format.h" />
+    <ClInclude Include="utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
