@@ -1,7 +1,9 @@
 #include "utils.h"
 
+ConsoleColor currentColor = White;
+
 void ResetColor() {
-    SetConsoleColor(White);
+    SetConsoleColor(currentColor);
 }
 
 void PrintMessage(string message) {
@@ -16,7 +18,12 @@ void PrintError(string error) {
     ResetColor();
 }
 
-float InputParseFloat(string inputText) {
+void CommandPromptColor() {
+    SetConsoleColor(LightCyan);
+    cout << "\t\tCommand Prompt" << endl;
+}
+
+double InputParseDouble(string inputText) {
     string input;
 
     while (true)
@@ -27,7 +34,7 @@ float InputParseFloat(string inputText) {
 
             if (SpecialCommand(input)) continue;
 
-            return stof(input);
+            return stod(input);
         }
         catch (const exception&) {
             PrintError("Nhap du lieu khong phu hop!!! Vui long nhap lai");

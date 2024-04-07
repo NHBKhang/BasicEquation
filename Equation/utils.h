@@ -8,10 +8,13 @@
 
 using namespace std;
 
+extern ConsoleColor currentColor;
+
 void ResetColor();
 void PrintError(string error);
 void PrintMessage(string message);
-float InputParseFloat(string inputText);
+void CommandPromptColor();
+double InputParseDouble(string inputText);
 void OutputStart();
 
 #endif

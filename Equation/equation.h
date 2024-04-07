@@ -10,7 +10,9 @@ using namespace std;
 
 void LinearEquation();
 void QuadraticEquation();
+void CubicEquation();
 void SimultaneousEquations2Unknowns();
+void SimultaneousEquations3Unknowns();
 
 #endif
 
