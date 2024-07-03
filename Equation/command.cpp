@@ -53,6 +53,22 @@ bool SpecialCommand(string& input) {
                 PrintMessage("Set text color to " + color);
                 ResetColor();
             }
+            else if (myInput._Equal("setbg") || myInput._Equal("stbg")) {
+                myInput = CommandInput("Bg-color: ");
+
+                string color;
+                if (myInput._Equal("white")) {
+                    SetConsoleBackgroundColor(BACKGROUND_INTENSITY | BACKGROUND_RED | BACKGROUND_GREEN | BACKGROUND_BLUE);
+                }
+                else if (myInput._Equal("green")) {
+                    SetConsoleBackgroundColor(BACKGROUND_GREEN);
+                }
+                else {
+                    SetConsoleBackgroundColor(0);
+                }
+                PrintMessage("Set background color to " + color);
+                ResetColor();
+            }
         }
 
         return true;
@@ -60,6 +76,8 @@ bool SpecialCommand(string& input) {
     else if (cmd._Equal("khang")) {
         PrintMessage("Khong co gi de xem o day dau");
         ResetColor();
+
+        return true;
     }
 
     return false;

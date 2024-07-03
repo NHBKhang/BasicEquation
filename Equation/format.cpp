@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <cctype>
 #include <sstream>
+#include <vector>
 
 using namespace std;
 

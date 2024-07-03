@@ -1,4 +1,5 @@
 #include "utils.h"
+#include "operators.h"
 
 ConsoleColor currentColor = White;
 
@@ -33,11 +34,14 @@ double InputParseDouble(string inputText) {
             getline(cin, input);
 
             if (SpecialCommand(input)) continue;
-
-            return stod(input);
+            else {
+                if (!input.empty())
+                    return Evaluate(input);
+            }
         }
-        catch (const exception&) {
+        catch (const exception& e) {
             PrintError("Nhap du lieu khong phu hop!!! Vui long nhap lai");
+            PrintError(e.what());
 
             continue;
         }

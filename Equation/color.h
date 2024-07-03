@@ -25,6 +25,7 @@ enum ConsoleColor {
 
 // Function declaration to set console text color
 void SetConsoleColor(ConsoleColor color);
+void SetConsoleBackgroundColor(WORD color);
 
 #endif
 
