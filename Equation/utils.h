@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <fstream>
 #include "color.h"
 #include "command.h"
 
@@ -16,5 +17,6 @@ void PrintMessage(string message);
 void CommandPromptColor();
 double InputParseDouble(string inputText);
 void OutputStart();
+void ReadFile(const string& filename);
 
 #endif

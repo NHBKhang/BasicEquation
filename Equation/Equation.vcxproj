@@ -155,6 +155,11 @@
     <ClInclude Include="operators.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="guide.txt" />
+    <Text Include="help.txt" />
+    <Text Include="info.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

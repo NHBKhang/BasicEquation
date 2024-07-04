@@ -1,0 +1,10 @@
+For more information on a specific command, type HELP command-name
+CLEAR   | CLS         Clear screen
+EXIT    | QUIT        Exit program or command line
+COMMAND | CMD         Open program command line
+GUIDE   | HOW         See guide, how to use the program
+  SETCOLOR | STCLR    Set console text color
+  SETBG    | STBG     Set console background color
+  COLOR OPTIONS       White, green and black (default)
+INFO                  See more info about program
+KHANG                 Special command

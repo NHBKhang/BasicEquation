@@ -13,8 +13,11 @@ int main() {
 
     while (true) {
         SetConsoleColor(LightMagenta);
-        cout << "\t\tGIAI PHUONG TRINH" << endl;
-        cout << "--------------------------------------------------" << endl;
+        cout << "\t\tGIAI PHUONG TRINH\n";
+        ResetColor();
+        cout << "For more information on a specific command, type HELP command-name\n";
+        SetConsoleColor(LightMagenta);
+        cout << "--------------------------------------------------\n";
         ResetColor();
 
         chon = int(InputParseDouble("1. Phuong trinh | 2. He phuong trinh | 3. Ket thuc\n-> "));

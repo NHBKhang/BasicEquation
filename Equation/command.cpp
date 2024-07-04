@@ -1,4 +1,5 @@
 #include "command.h"
+#include <iostream>
 
 string CommandInput(string cmd = "") {
     string input;
@@ -70,6 +71,21 @@ bool SpecialCommand(string& input) {
                 ResetColor();
             }
         }
+
+        return true;
+    }
+    else if (cmd._Equal("help")) {
+        ReadFile("help.txt");
+
+        return true;
+    }
+    else if (cmd._Equal("info")) {
+        ReadFile("info.txt");
+
+        return true;
+    }
+    else if (cmd._Equal("guide") || cmd._Equal("how")) {
+        ReadFile("guide.txt");
 
         return true;
     }

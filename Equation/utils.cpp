@@ -51,3 +51,18 @@ void OutputStart() {
     SetConsoleColor(Green);
     cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
 }
+
+void ReadFile(const string& filename) {
+    ifstream file(filename);
+    if (!file.is_open()) {
+        PrintError("Unable to open file " + filename);
+        return;
+    }
+
+    string line;
+    while (getline(file, line)) {
+        cout << line << endl;
+    }
+
+    file.close();
+}

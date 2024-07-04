@@ -9,6 +9,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{62ab73bf-3049-4108-bd9b-519c9e64b961}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -52,5 +55,16 @@
     <ClInclude Include="operators.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="help.txt">
+      <Filter>Data</Filter>
+    </Text>
+    <Text Include="info.txt">
+      <Filter>Data</Filter>
+    </Text>
+    <Text Include="guide.txt">
+      <Filter>Data</Filter>
+    </Text>
   </ItemGroup>
 </Project>

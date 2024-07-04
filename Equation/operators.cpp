@@ -9,16 +9,22 @@
 using namespace std;
 
 bool isOperator(char c) {
-    return c == '+' || c == '-' || c == '*' || c == '/' || c == '^';
+    return c == '+' || c == '-' || c == '*' || c == '/' || c == '^' || c == '_'; // '_' for unary minus
 }
 
 int precedence(char op) {
-    if (op == '+' || op == '-')
+    if (op == '+' || op == '-') {
         return 1;
-    if (op == '*' || op == '/')
+    }
+    if (op == '*' || op == '/') {
         return 2;
-    if (op == '^')
+    }
+    if (op == '^') {
         return 3;
+    }
+    if (op == '_') {
+        return 4; // Unary minus has the highest precedence
+    }
     return 0;
 }
 
@@ -27,9 +33,10 @@ double applyOperator(double a, double b, char op) {
     case '+': return a + b;
     case '-': return a - b;
     case '*': return a * b;
-    case '/': return a / b;
+    case '/': if (b == 0) throw runtime_error("Division by zero."); return a / b;
     case '^': return pow(a, b);
-    default: return 0;
+    case '_': return -b; // Unary minus
+    default: throw runtime_error("Invalid operator.");
     }
 }
 
@@ -41,6 +48,7 @@ double Evaluate(const string& expression) {
     char token;
     bool expectOperand = true; // Flag to expect an operand after '(' or unary '-'
     bool lastTokenWasOperator = true; // Initially true to handle negative numbers
+
     while (ss >> token) {
         if (isdigit(token) || token == '.') {
             ss.putback(token);
@@ -74,6 +82,34 @@ double Evaluate(const string& expression) {
             ops.pop(); // Remove '(' from stack
             expectOperand = false; // After closing ')', an operator is expected next
             lastTokenWasOperator = false;
+        }
+        else if (token == '|') { // Handle absolute value
+            if (expectOperand) {
+                ops.push('|');
+            }
+            else {
+                while (!ops.empty() && ops.top() != '|') {
+                    char op = ops.top();
+                    ops.pop();
+                    if (values.size() < 2) {
+                        throw runtime_error("Invalid expression: Not enough operands for operator.");
+                    }
+                    double b = values.top();
+                    values.pop();
+                    double a = values.top();
+                    values.pop();
+                    values.push(applyOperator(a, b, op));
+                }
+                if (ops.empty() || ops.top() != '|') {
+                    throw runtime_error("Invalid expression: Mismatched absolute value bars.");
+                }
+                ops.pop(); // Remove '|' from stack
+                double value = values.top();
+                values.pop();
+                values.push(fabs(value)); // Apply absolute value
+                expectOperand = false; // After closing '|', an operator is expected next
+                lastTokenWasOperator = false;
+            }
         }
         else if (isOperator(token)) {
             if (expectOperand && (token == '+' || token == '-')) {

@@ -1,0 +1,19 @@
+Here is guide about program, type GUIDE or HOW command-name
+
+To use this program, type the number to choose which equation you
+want or next command. 
+
+You can enter real number or operator expression. Allow expression 
+is addition (+), subtraction (-), multiplication (*), division (/), 
+power (^), expression in parentheses (ex: 1 - (2 + 3)) or absolute 
+(|). 
+
+With expression in parentheses, you can NOT use negative number at
+the beginning of expression.
+  Wrong: (-1 + 2)
+  Correct: (0 - 1 + 2)
+
+Beside number, you can type special command. To know more about
+special command type HELP to see.
+
+Thanks for reading the guide.
