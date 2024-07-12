@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include "color.h"
 #include "command.h"
 
@@ -17,6 +18,8 @@ void PrintMessage(string message);
 void CommandPromptColor();
 double InputParseDouble(string inputText);
 void OutputStart();
-void ReadFile(const string& filename);
+void ReadFile(const string& filename, const bool encrypt = false);
+void WriteFile(const string& filename, const bool encrypt = false);
+string XOR(const string& s, char c);
 
 #endif

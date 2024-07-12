@@ -66,5 +66,8 @@
     <Text Include="guide.txt">
       <Filter>Data</Filter>
     </Text>
+    <Text Include="secret.txt">
+      <Filter>Data</Filter>
+    </Text>
   </ItemGroup>
 </Project>

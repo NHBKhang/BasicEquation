@@ -1,4 +1,4 @@
-#include "command.h"
+﻿#include "command.h"
 #include <iostream>
 
 string CommandInput(string cmd = "") {
@@ -90,7 +90,8 @@ bool SpecialCommand(string& input) {
         return true;
     }
     else if (cmd._Equal("khang")) {
-        PrintMessage("Khong co gi de xem o day dau");
+        //WriteFile("secret.txt", true);
+        ReadFile("secret.txt", true);
         ResetColor();
 
         return true;
